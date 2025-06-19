@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Food Website</title>
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(239, 169, 39);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color:#dabcbc
+        }
+
+        .confirmation-container {
+            background: rgb(107, 95, 73)
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .confirmation-container h1 {
+            color: #4caf50;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .confirmation-container p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .confirmation-container .order-details {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .confirmation-container .order-details p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .confirmation-container button {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .confirmation-container button:hover {
+            background-color: #dbb80a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="confirmation-container">
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for your purchase. Your order has been successfully placed.</p>
+        <div class="order-details">
+            <p><strong>Order Number:</strong> #123456</p>
+            <p><strong>Estimated Delivery:</strong> 3-5 days</p>
+            <p><strong>Shipping Address:</strong>GARIA ,Boral ,Kolkata WestBengal,811201  </p>
+        </div>
+        <p>We will notify you once your order is on its way.</p>
+        <button onclick="goToHomePage()">Go to Home</button>
+    </div>
+
+    <script>
+        function goToHomePage() {
+            window.location.href = "homepage.html";
+        }
+    </script>
+</body>
+
+</html>

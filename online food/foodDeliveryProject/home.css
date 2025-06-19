@@ -1,0 +1,678 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+.search ul li:hover {
+    color: rgb(255, 38, 0);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 90vw;
+    margin-top: 1rem;
+    /* position: sticky;
+    top: 0;
+    background-color: brown;
+    z-index: 1; */
+}
+
+.nav nav li {
+    list-style: none;
+    cursor: pointer;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+ul {
+    display: flex;
+    gap: 3rem;
+}
+
+.searchbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(240, 231, 231); */
+    border-radius: 5px;
+    height: 2rem;
+    gap: 0.2rem;
+    box-shadow: 0px 3px 15px -3px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+}
+
+.searchbox input {
+    border: 2px solid rgb(211, 208, 202);
+    height: 2rem;
+    border-radius: 5px;
+}
+
+.left {
+    /* border: 2px solid red; */
+    width: 45vw;
+    height: 80vh;
+}
+
+
+
+.right {
+    /* border: 2px solid red; */
+    width: 40vw;
+    height: 80vh;
+}
+
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.bike li {
+    list-style: none;
+}
+
+.bike {
+    background-color: rgba(238, 188, 123, 0.578);
+    color: rgb(255, 0, 0);
+    width: 15rem;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bike ul li:first-child {
+    margin-top: 18px;
+    margin-left: 15px;
+    ;
+}
+
+.para {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 30vw;
+    margin-top: 1rem;
+}
+
+.para .p1 {
+    font-size: 62px;
+    font-weight: 800;
+}
+
+.para .p1 p:nth-child(3) {
+    color: rgb(255, 167, 3);
+}
+
+.footer1 ul li {
+    list-style: none;
+}
+
+.footer1 ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ordernow {
+    background-color: orange;
+    color: white;
+    border: none;
+    font-size: 15px;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+
+.orderprocess {
+    border: none;
+    /* background-color:orange; */
+    font-size: 15px;
+    padding: 1rem;
+    border-radius: 8px;
+    /* color: white; */
+    font-weight: 600;
+}
+
+.menu {
+    max-height: 82vh;
+    overflow-y: hidden;
+    width: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.menu .card {
+    background-color:orange;
+    width: 38vh;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    position: relative;
+}
+
+.burgerid {
+    position: absolute;
+    bottom: -13px;
+    right: -16px;
+    cursor: pointer;
+}
+
+.address {
+    /* border: 2px solid red; */
+    max-height: 10rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    margin-top: 15rem;
+    width: 80vw;
+}
+
+.time,
+.phone,
+.add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.rightMenu1 img:hover {
+    filter: invert(1);
+}
+
+.rightMenu2 img:hover {
+    filter: invert(1);
+}
+
+.rightMenu3 img:hover {
+    filter: invert(1);
+}
+
+.rightMenu4 img:hover {
+    filter: invert(1);
+}
+.rightMenu5 img:hover {
+    filter: invert(1);
+}
+.rightMenu6 img:hover {
+    filter: invert(1);
+}
+.rightMenu7 img:hover {
+    filter: invert(1);
+}
+.rightMenu8 img:hover {
+    filter: invert(1);
+}
+.rightMenu9 img:hover {
+    filter: invert(1);
+}
+
+.rightMenu1,
+.rightMenu2,
+.rightMenu3,
+.rightMenu4,
+.rightMenu5,
+.rightMenu6,
+.rightMenu7,
+.rightMenu8,
+.rightMenu9 {
+    position: absolute;
+    bottom: -10px;
+    right: -20px;
+}
+
+
+.cart {
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.cart1 {
+    /* border: 2px solid rgb(9, 247, 21); */
+    text-align: center;
+    width: 90vw;
+    margin: auto;
+    /* margin-top: 2rem; */
+    margin: 2rem;
+    height: 85vh;
+    overflow-y: auto;
+    display: flex;
+    /* flex-wrap: wrap; */
+
+}
+
+
+
+.cart .food {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: orange;
+    border-radius: 8px;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart .food .foodin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.cart .foodin button {
+    background-color: orange;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.Last {
+    margin-top: 4rem;
+    background-color: rgb(255, 138, 4);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 20rem;
+    color: rgb(2, 1, 1);
+    gap: 2rem;
+}
+
+.Last p {
+    color: azure;
+}
+
+.last1,
+.last2,
+.last3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+#backtop {
+    background-color: orange;
+    color: white;
+    border: none;
+    font-size: 15px;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cart-home {
+    position: relative;
+    right: -37rem;
+    background-color: orange;
+    color: white;
+    border: none;
+    font-size: 15px;
+    padding: 1rem;
+    border-radius: 26px;
+    cursor: pointer;
+}
+
+.search input {
+    padding: 10px;
+    color: orangered;
+    font-weight: 600;
+}
+
+/* message box */
+.alert-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 1000;
+}
+
+.alert {
+    background-color: #ff9800;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slide-in 0.5s ease-out;
+    background-color: #4CAF50;
+}
+
+.alert button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+.highlight {
+    color: rgb(0, 4, 255);
+    font-weight: 900;
+    font-size: larger;
+    /* border: 5px groove rgb(255, 115, 15); */
+    transition: all 1s;
+}
+
+#dark {
+    /* background-color: #2b2318; */
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.dark-mode .highlight {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode button {
+    background-color: #dc2323;
+    color: white;
+    border: none;
+}
+
+.dark-mode .food {
+    background-color: #1e1e1e;
+    /* Dark card background */
+    color: white;
+}
+
+.dark-mode {
+    background-color: #121212;
+    /* Dark background */
+    color: white;
+    /* Light text */
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.whitecolor {
+    color: rgb(222, 65, 12);
+}
+
+.cart1 {
+    color: orangered;
+}
+
+
+/* For tablets and larger devices */
+@media (max-width: 1024px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left, .right {
+        width: 90vw;
+        height: auto;
+    }
+
+    .menu .card {
+        width: 80vw;
+    }
+
+    .cart .food {
+        width: 80vw;
+    }
+
+    .address {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 10rem;
+        margin-bottom: 20rem; /* Add margin to avoid overlap */
+    }
+
+    .Last {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .last1, .last2, .last3 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    /* .cart1{
+        margin: 0rem;
+    } */
+
+    /* .left{
+        margin-left: 12rem;
+    } */
+}
+/* .p2{
+    width: 80vw;
+    margin: 0rem;
+    padding: 1rem; 
+} */
+/* For mobile devices */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left, .right {
+        width: 90vw;
+        height: auto;
+    }
+
+    .menu .card {
+        width: 90vw;
+    }
+
+    .cart .food {
+        width: 90vw;
+    }
+
+    .address {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 10rem;
+        margin-bottom: 20rem; /* Add margin to avoid overlap */
+    }
+
+    .Last {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .last1, .last2, .last3 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .cart1{
+        margin: 0rem;
+    }
+    .p2{
+        width: 80vw;
+        margin: 0rem;
+        padding: 1rem; 
+}
+.left{
+    margin-left: 2rem;
+}
+.menu{
+    max-height: 82vh;
+    overflow-y: hidden;
+    width: 42vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: auto;
+    padding: 0rem;
+}
+
+
+}
+
+/* For small mobile devices */
+@media (max-width: 480px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left, .right {
+        width: 100vw;
+        height: auto;
+    }
+
+    .menu .card {
+        width: 100vw;
+    }
+
+    .cart .food {
+        width: 83vw;
+        margin: auto;
+    }
+
+    .address {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 10rem;
+        margin-bottom: 20rem; /* Add margin to avoid overlap */
+    }
+
+    .Last {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .last1, .last2, .last3 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .cart1{
+        margin: 1rem;
+    }
+
+    .p2{
+            width: 80vw;
+            margin: 0rem;
+            padding: 1rem; 
+    }
+    .left{
+        margin-left: 2rem;
+    }
+    body, html {
+        overflow-x: hidden;
+    }
+    
+    /* Ensure all elements fit within the viewport width */
+    .container, .nav, .main, .cart, .address {
+        max-width: 100vw;
+        /* overflow-x: hidden; */
+    }
+
+    .menu{
+        max-height: 82vh;
+        overflow-y: hidden;
+        width: 42vh;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: auto;
+        padding: 0rem;
+    }
+   
+}

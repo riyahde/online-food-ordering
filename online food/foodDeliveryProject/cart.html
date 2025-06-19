@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Food Website</title>
+    <link rel="stylesheet" href="cart.css">
+    <script defer src="cart.js"></script>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f6f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(image/indian-food-cuisine-dishes-copy-space-tikka-masala-dal-paneer-samosa-chapati-chutney-spices-white-wooden-background-150703754.jpg);
+        }
+
+        .cart-container {
+            background: rgb(240, 216, 197);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 80%;
+        }
+
+        .cart-items {
+            margin: 20px 0;
+            font-size: x-large;
+            font-weight: 600;
+            height: 60vh;
+            overflow-y: auto;
+        }
+
+        .cart-summary {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #checkout {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #checkout:hover {
+            background-color: #e64a19;
+        }
+
+        .btnback {
+            background-color: #3a2017;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .btnback:hover {
+            background-color: #e31313;
+            color: white;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close {
+            color: #e72323;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .payment-option {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .payment-option:hover {
+            background-color: #f1f1f1;
+        }
+
+        #confirmPayment {
+            background-color: #0abb10;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .hiddenpay {
+            background-color: grey;
+            color: white;
+        }
+
+        /* For tablets and larger devices */
+@media (max-width: 1024px) {
+    .container {
+        height: auto;
+        width: 100%;
+        padding: 2rem;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cart-container {
+        width: 80vw;
+        margin: 20px auto; /* Added margin */
+        padding: 1.5rem;
+        background-color:#eac08a;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .cart-items {
+        font-size: large;
+    }
+
+    .cart-summary {
+        font-size: 16px;
+    }
+
+    #checkout, .btnback {
+        width: auto;
+        font-size: 1.2rem;
+        padding: 8px 16px; /* Adjusted padding */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .container {
+        height: auto;
+        width: 100%;
+        padding: 1rem;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cart-container {
+        width: 90vw;
+        margin: 20px auto; /* Added margin */
+        padding: 1rem;
+        background-color: #eac08a;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .cart-items {
+        font-size: medium;
+    }
+
+    .cart-summary {
+        font-size: 14px;
+    }
+
+    #checkout, .btnback {
+        width: auto;
+        font-size: 1rem;
+        padding: 8px 16px; /* Adjusted padding */
+    }
+}
+
+/* For small mobile devices */
+@media (max-width: 480px) {
+    .container {
+        height: auto;
+        width: 100%;
+        padding: 0.5rem;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cart-container {
+        width: 95vw;
+        margin: 20px auto; /* Added margin */
+        padding: 0.5rem;
+        background-color: #eac08a;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .cart-items {
+        font-size: small;
+    }
+
+    .cart-summary {
+        font-size: 12px;
+    }
+
+    #checkout, .btnback {
+        width: auto;
+        font-size: 0.8rem;
+        padding: 8px 16px; /* Adjusted padding */
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-summary">
+            <h3>Total: <span id="cart-total">₹0</span></h3>
+            <button class="btnback">Back</button>
+            <button id="checkout">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Modal for payment options -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Select Payment Method</h2>
+            <div class="payment-option" id="credit">Credit/Debit Card</div>
+            <div class="payment-option" id="net">Net Banking</div>
+            <div class="payment-option" id="upi">UPI</div>
+            <div class="payment-option" id="cod">Cash on Delivery</div>
+            <button id="confirmPayment">Confirm Payment</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadCart();
+        });
+
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartContainer = document.querySelector(".cart-items");
+            let totalPriceElement = document.getElementById("cart-total");
+
+            cartContainer.innerHTML = ""; // Clear previous items
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+                totalPriceElement.textContent = "₹0";
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                let div = document.createElement("div");
+                div.classList.add("cart-item");
+                div.innerHTML = `
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:2rem;background-Color: #ede4e1 ;margin:5px;padding:10px";><p>${item.name} - ₹${item.price} x ${item.quantity}</p>
+            <button style="border:none;background-color:red;color:white;padding:5px;border-radius:8px;height:30px" onclick="removeFromCart(${index})">Remove</button>
+        </div>`;
+                cartContainer.appendChild(div);
+                totalPrice += item.price * item.quantity;
+            });
+
+            totalPriceElement.textContent = `₹${totalPrice}`;
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1); // Remove item at index
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart(); // Reload cart after removing item
+        }
+
+        let backbutton = document.querySelector(".btnback")
+        backbutton.addEventListener("click", (i) => {
+            i.preventDefault();
+            window.location.href = "homepage.html"
+        })
+
+        // Modal functionality
+        let modal = document.getElementById("paymentModal");
+        let btn = document.getElementById("checkout");
+        let span = document.getElementsByClassName("close")[0];
+        let confirmPayment = document.getElementById("confirmPayment");
+
+        btn.onclick = function () {
+            modal.style.display = "flex";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        confirmPayment.onclick = function () {
+            alert("Payment Confirmed!");
+            modal.style.display = "none";
+            // Clear the cart
+            localStorage.removeItem("cart");
+            loadCart();
+            // Redirect to a confirmation page
+            // window.location.href = "register.html";
+            window.location.href = "confirmation.html";
+        }
+
+        let credit = document.querySelector("#credit")
+        let net = document.querySelector("#net")
+        let upi = document.querySelector("#upi")
+        let cod = document.querySelector("#cod")
+
+        function resetPaymentOptions() {
+            credit.style.backgroundColor = "";
+            credit.style.color = "";
+            net.style.backgroundColor = "";
+            net.style.color = "";
+            upi.style.backgroundColor = "";
+            upi.style.color = "";
+            cod.style.backgroundColor = "";
+            cod.style.color = "";
+        }
+
+        credit.addEventListener("click", () => {
+            resetPaymentOptions();
+            credit.style.backgroundColor = "grey";
+            credit.style.color = "white";
+        })
+
+        net.addEventListener("click", () => {
+            resetPaymentOptions();
+            net.style.backgroundColor = "grey";
+            net.style.color = "white";
+        })
+
+        upi.addEventListener("click", () => {
+            resetPaymentOptions();
+            upi.style.backgroundColor = "grey";
+            upi.style.color = "white";
+        })
+
+        cod.addEventListener("click", () => {
+            resetPaymentOptions();
+            cod.style.backgroundColor = "grey";
+            cod.style.color = "white";
+        })
+    </script>
+</body>
+
+</html>
